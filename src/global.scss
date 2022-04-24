@@ -3,18 +3,18 @@
 }
 
 html {
-  --bg: #fff;
-  --fg: #25282A;
+  --bg: #fac396;
+  --fg: #804A1D;
   --gray: #888;
-  --royal: #0072CE;
+  --royal: #FA5F44;
   --blue: #6AD1E3;
-  --primary: #D1CCBD;
+  --primary: #805F44;
   --secondary: var(--royal);
   --tertiary: #FF585D;
 
   background-color: var(--bg);
   color: var(--fg);
-  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+  font-family: 'Comfortaa', cursive;
   font-size: calc(.65em + 0.7vw);
   line-height: 1.3;
 
@@ -36,7 +36,7 @@ html {
 }
 
 body {
-  margin: 0 auto;
+  margin: 0 left;
   padding: 0 1em;
   max-width: 40em;
 }
@@ -48,6 +48,8 @@ fieldset {
 }
 
 .highlight {
+  background-color: #f7b681;
+  
   align-items: center;
   display: flex;
   margin-bottom: 0.5em;
@@ -57,6 +59,7 @@ fieldset {
   }
   input {
     caret-color: var(--secondary);
+    font-family: 'Comfortaa', cursive;
   }
 }
 
@@ -70,6 +73,7 @@ button, .highlight {
   border: 0.1em solid var(--primary);
   padding: 0.5em 1em;
 
+
   &:hover, &:focus, &:focus-within {
     border-color: var(--secondary);
   }
@@ -78,6 +82,7 @@ button, .highlight {
 input {
   border: none;
   flex: 1;
+
   &:read-only {
     color: var(--primary)
   }
@@ -94,24 +99,30 @@ input[type="number"] {
   }
 }
 
-button, input {
+ input {
   background: transparent;
   color: inherit;
   cursor: pointer;
   font: inherit;
   outline: none;
+  font-family: 'Comfortaa', cursive;
 }
 
 button {
   position: relative;
-  transition: top 50ms;
+  transition: top 400ms;
+  background:  var(--primary);
+  font-family: 'Comfortaa', cursive;
+  font-size: 20px;
+
   &:hover, &:focus {
-    top: -1px;
+    transition: 400ms;
+    background: var(--secondary);
   }
   &:active {
     background: var(--secondary);
     border-color: var(--secondary);
-    top: 1px;
+    top: 2px;
   }
 }
 

@@ -4,8 +4,10 @@ import App from './App';
 import getConfig from './config.js';
 import * as nearAPI from 'near-api-js';
 
+import { WalletSelectorContextProvider } from "./contexts/WalletSelectorContext";
 // Initializing contract
 async function initContract() {
+
   // get network configuration values from config.js
   // based on the network ID we pass to getConfig()
   const nearConfig = getConfig(process.env.NEAR_ENV || 'testnet');
@@ -56,12 +58,9 @@ async function initContract() {
 window.nearInitPromise = initContract().then(
   ({ contract, currentUser, nearConfig, walletConnection }) => {
     ReactDOM.render(
-      <App
-        contract={contract}
-        currentUser={currentUser}
-        nearConfig={nearConfig}
-        wallet={walletConnection}
-      />,
+      <WalletSelectorContextProvider>
+      <App/>
+      </WalletSelectorContextProvider>,
       document.getElementById('root')
     );
   }
